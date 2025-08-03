@@ -1,0 +1,100 @@
+---
+import { Button } from '@/components/starwind/button';
+import Sun from '@/components/assets/sun.svg';
+import Menu from '@/components/assets/menu.svg';
+import Close from '@/components/assets/close.svg';
+---
+
+<header class="shadow-md p-4">
+  <nav class="container mx-auto flex justify-between items-center">
+
+    <div class="logo">
+      <Button href="/" variant="outline" size="sm">LOGO</Button>
+    </div>
+
+    <div id="nav-links" class="">
+      <ul class="hidden md:flex space-x-2">
+        <li>
+          <Button href="/" variant="outline" size="sm">HOME</Button>
+        </li>
+        <li>
+          <Button href="/about" variant="outline" size="sm">ABOUT</Button>
+        </li>
+        <li>
+          <Button href="/blog" variant="outline" size="sm">BLOG</Button>
+        </li>
+        <li>
+          <Button href="/contact" variant="outline" size="sm">CONTACT</Button>
+        </li>
+        <li>
+          <Button id="toggleBTN" variant="outline" size="sm"><Sun /></Button>
+        </li>
+      </ul>
+    </div>
+
+   <div id="menu" class="md:hidden">
+      <Button id="menu" variant="outline" size="sm"><Menu/></Button>
+   </div>   
+   
+   <div id="close" class="md:hidden hidden">
+      <Button class="hidden" id="close" variant="outline" size="sm"><Close/></Button>
+   </div>
+  </nav>
+
+  <div id="mobile hidden">
+  <ul id="mobile" class="flex flex-col md:hidden gap-4 mb-4">
+        <li class="flex justify-around">
+          <Button href="/" variant="ghost" size="sm">HOME</Button>
+        </li>
+        <li class="flex justify-around ">
+          <Button href="/about" variant="ghost" size="sm">ABOUT</Button>
+        </li>
+        <li class="flex justify-around">
+          <Button href="/blog" variant="ghost" size="sm">BLOG</Button>
+        </li>
+        <li class="flex justify-around">
+          <Button href="/contact" variant="ghost" size="sm">CONTACT</Button>
+        </li>
+        <li class="flex justify-around">
+          <Button id="toggleBTN2" variant="ghost" size="sm"><Sun /></Button>
+        </li>
+  </ul>
+
+    </div>
+</header>
+
+<script is:inline>
+  const root = document.documentElement;
+  const toggleBTN = document.getElementById('toggleBTN');
+  const toggleBTN2 = document.getElementById('toggleBTN2');
+  const mobile = document.getElementById('mobile');
+
+  const menu = document.getElementById('menu');
+  const close = document.getElementById('close');
+
+
+  toggleBTN.addEventListener('click', () => {
+    root.classList.toggle('dark');
+  });
+
+  toggleBTN2.addEventListener('click', () => {
+    root.classList.toggle('dark');
+  });
+
+
+  menu.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    close.classList.remove('hidden');
+    mobile.classList.remove('hidden');
+  });
+
+  close.addEventListener('click', () => {
+    close.classList.add('hidden');
+    menu.classList.remove('hidden');
+    mobile.classList.add('hidden');
+  });
+
+
+
+
+</script>
