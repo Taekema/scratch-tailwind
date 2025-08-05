@@ -3,13 +3,20 @@ import { Button } from '@/components/starwind/button';
 import Sun from '@/components/assets/sun.svg';
 import Menu from '@/components/assets/menu.svg';
 import Close from '@/components/assets/close.svg';
+import LogoW from '@/components/images/logo-white.png';
+import LogoD from '@/components/images/logo-dark.png';
+import { Image } from 'astro:assets';
 ---
 
-<header class="shadow-md p-4">
+<header class="shadow-sm p-4 dark:shadow-white">
   <nav class="container mx-auto flex justify-between items-center">
-
-    <div class="logo">
-      <Button href="/" variant="outline" size="sm">LOGO</Button>
+    <div class="logo flex flex-row">
+      <div class="dark:hidden">
+        <Image src={LogoD} width={36} height={36} alt="logo" />
+      </div>
+      <div>
+        <Image src={LogoW} width={36} height={36} alt="logo" />
+      </div>
     </div>
 
     <div id="nav-links" class="">
@@ -32,35 +39,36 @@ import Close from '@/components/assets/close.svg';
       </ul>
     </div>
 
-   <div id="menu" class="md:hidden">
-      <Button id="menu" variant="outline" size="sm"><Menu/></Button>
-   </div>   
-   
-   <div id="close" class="md:hidden hidden">
-      <Button class="hidden" id="close" variant="outline" size="sm"><Close/></Button>
-   </div>
+    <div id="menu" class="md:hidden">
+      <Button id="menu" variant="outline" size="sm"><Menu /></Button>
+    </div>
+
+    <div id="close" class="md:hidden hidden">
+      <Button class="hidden" id="close" variant="outline" size="sm"
+        ><Close /></Button
+      >
+    </div>
   </nav>
 
-  <div id="mobile hidden">
-  <ul id="mobile" class="flex flex-col md:hidden gap-4 mb-4">
-        <li class="flex justify-around">
-          <Button href="/" variant="ghost" size="sm">HOME</Button>
-        </li>
-        <li class="flex justify-around ">
-          <Button href="/about" variant="ghost" size="sm">ABOUT</Button>
-        </li>
-        <li class="flex justify-around">
-          <Button href="/blog" variant="ghost" size="sm">BLOG</Button>
-        </li>
-        <li class="flex justify-around">
-          <Button href="/contact" variant="ghost" size="sm">CONTACT</Button>
-        </li>
-        <li class="flex justify-around">
-          <Button id="toggleBTN2" variant="ghost" size="sm"><Sun /></Button>
-        </li>
-  </ul>
-
-    </div>
+  <div id="mobile" class="hidden">
+    <ul id="mobile" class="flex flex-col md:hidden gap-4 mb-4">
+      <li class="flex justify-around">
+        <Button href="/" variant="ghost" size="sm">HOME</Button>
+      </li>
+      <li class="flex justify-around">
+        <Button href="/about" variant="ghost" size="sm">ABOUT</Button>
+      </li>
+      <li class="flex justify-around">
+        <Button href="/blog" variant="ghost" size="sm">BLOG</Button>
+      </li>
+      <li class="flex justify-around">
+        <Button href="/contact" variant="ghost" size="sm">CONTACT</Button>
+      </li>
+      <li class="flex justify-around">
+        <Button id="toggleBTN2" variant="ghost" size="sm"><Sun /></Button>
+      </li>
+    </ul>
+  </div>
 </header>
 
 <script is:inline>
@@ -72,7 +80,6 @@ import Close from '@/components/assets/close.svg';
   const menu = document.getElementById('menu');
   const close = document.getElementById('close');
 
-
   toggleBTN.addEventListener('click', () => {
     root.classList.toggle('dark');
   });
@@ -80,7 +87,6 @@ import Close from '@/components/assets/close.svg';
   toggleBTN2.addEventListener('click', () => {
     root.classList.toggle('dark');
   });
-
 
   menu.addEventListener('click', () => {
     menu.classList.add('hidden');
@@ -93,8 +99,4 @@ import Close from '@/components/assets/close.svg';
     menu.classList.remove('hidden');
     mobile.classList.add('hidden');
   });
-
-
-
-
 </script>

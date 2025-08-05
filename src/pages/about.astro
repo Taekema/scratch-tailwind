@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import avatar11 from '@/components/images/bertus.jpg';
+import Carousel from '@/components/Carousel.astro';
+---
+
+<Layout>
+  <section class="p-4">
+    <div class="container mx-auto grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="place-self-center border-8 rounded-2xl">
+        <Image
+          class="rounded-2xl"
+          src={avatar11}
+          height={400}
+          width={300}
+          class="hero-image"
+          alt="A picture of me."
+        />
+      </div>
+      <div class="place-self-center">
+        <h1 class="text-3xl font-bold mb-2">Over mijzelf</h1>
+        <p class="mb-4">
+          Ik heb interesse in document gerelateerde processen en het maken van
+          web-sites. In de afgelopen decenia heb ik mij bezig gehouden met
+          allerlei soft- en hardware producten welke te maken met hebben met dit
+          onderwerp.
+        </p>
+        <p class="">
+          Met de opkomst van wyziwyg is er veel veranderd en zijn de
+          mogelijkheden ongekend geworden.
+        </p>
+      </div>
+    </section>
+    <div class="container mx-auto">
+      <h3> k;lk;kg;kg;k;;g;;k;gk</h3>
+      <Carousel />
+    </div>
+</Layout>
+
+<style></style>

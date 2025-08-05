@@ -1,0 +1,84 @@
+---
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
+import type { AstroSwiperType } from "astro-swiper";
+import { Image } from 'astro:assets';
+
+import Avatar1 from "@/components/images/avatar1.jpg";
+import Avatar2 from "@/components/images/avatar2.jpg";
+import Avatar3 from "@/components/images/avatar3.jpg";
+import Avatar4 from "@/components/images/avatar4.jpg";
+import Avatar5 from "@/components/images/avatar5.jpg";
+import Avatar6 from "@/components/images/avatar6.jpg";
+import Avatar7 from "@/components/images/avatar7.jpg";
+import Avatar8 from "@/components/images/avatar8.jpg";
+import Avatar9 from "@/components/images/avatar9.jpg";
+import Avatar10 from "@/components/images/avatar10.jpg";
+import Avatar11 from "@/components/images/avatar11.jpg";
+
+
+const astroSwiperOptions: AstroSwiperType = {
+  options: {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  },
+};
+---
+
+<!-- Slider main container -->
+<Swiper options={astroSwiperOptions.options} class="not-content">
+  <!-- Additional required wrapper -->
+  <SwiperWrapper class="">
+    <!-- Slides -->
+    <SwiperSlide>
+      <Image src={Avatar1} alt="Avatar1" class="object-cover"/>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar2} alt="Avatar2" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar3} alt="Avatar3" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar4} alt="Avatar4" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar5} alt="Avatar5" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar6} alt="Avatar6" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar7} alt="Avatar7" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar8} alt="Avatar8" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar9} alt="Avatar9" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar10} alt="Avatar10" />
+    </SwiperSlide>
+    <SwiperSlide>
+      <Image src={Avatar11} alt="Avatar11" />
+    </SwiperSlide>
+  </SwiperWrapper>
+
+  <!-- navigation buttons -->
+  <SwiperButtonPrev />
+  <SwiperButtonNext />
+</Swiper>
+
+<style>
+  .swiper {
+    max-width: 420px;
+    aspect-ratio: 16/9;
+  }
+
+
+</style>
