@@ -1,20 +1,25 @@
 ---
-import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
-import type { AstroSwiperType } from "astro-swiper";
+import {
+  Swiper,
+  SwiperWrapper,
+  SwiperSlide,
+  SwiperButtonPrev,
+  SwiperButtonNext,
+} from 'astro-swiper';
+import type { AstroSwiperType } from 'astro-swiper';
 import { Image } from 'astro:assets';
 
-import Avatar1 from "@/components/images/avatar1.jpg";
-import Avatar2 from "@/components/images/avatar2.jpg";
-import Avatar3 from "@/components/images/avatar3.jpg";
-import Avatar4 from "@/components/images/avatar4.jpg";
-import Avatar5 from "@/components/images/avatar5.jpg";
-import Avatar6 from "@/components/images/avatar6.jpg";
-import Avatar7 from "@/components/images/avatar7.jpg";
-import Avatar8 from "@/components/images/avatar8.jpg";
-import Avatar9 from "@/components/images/avatar9.jpg";
-import Avatar10 from "@/components/images/avatar10.jpg";
-import Avatar11 from "@/components/images/avatar11.jpg";
-
+import Avatar1 from '@/components/images/avatar1.jpg';
+import Avatar2 from '@/components/images/avatar2.jpg';
+import Avatar3 from '@/components/images/avatar3.jpg';
+import Avatar4 from '@/components/images/avatar4.jpg';
+import Avatar5 from '@/components/images/avatar5.jpg';
+import Avatar6 from '@/components/images/avatar6.jpg';
+import Avatar7 from '@/components/images/avatar7.jpg';
+import Avatar8 from '@/components/images/avatar8.jpg';
+import Avatar9 from '@/components/images/avatar9.jpg';
+import Avatar10 from '@/components/images/avatar10.jpg';
+import Avatar11 from '@/components/images/avatar11.jpg';
 
 const astroSwiperOptions: AstroSwiperType = {
   options: {
@@ -28,14 +33,14 @@ const astroSwiperOptions: AstroSwiperType = {
   },
 };
 ---
-
 <!-- Slider main container -->
+<h3 class="text-center mb-2 text-xl font-bold" >Terugblik in mijn product verleden</h3>
 <Swiper options={astroSwiperOptions.options} class="not-content">
   <!-- Additional required wrapper -->
-  <SwiperWrapper class="">
+  <SwiperWrapper>
     <!-- Slides -->
     <SwiperSlide>
-      <Image src={Avatar1} alt="Avatar1" class="object-cover"/>
+      <Image src={Avatar1} alt="Avatar1" class="obect-fit:cover" />
     </SwiperSlide>
     <SwiperSlide>
       <Image src={Avatar2} alt="Avatar2" />
@@ -76,9 +81,10 @@ const astroSwiperOptions: AstroSwiperType = {
 
 <style>
   .swiper {
-    max-width: 420px;
-    aspect-ratio: 16/9;
+    max-width: 350px;
+    /* aspect-ratio: 16/9; */
+    border-radius: 10px;
+    border-color: #000;
+    margin-bottom: 4rem;
   }
-
-
 </style>
